@@ -16,7 +16,7 @@ function App() {
     setLoading(true);
 
     try {
-      const resp = await fetch("http://localhost:4000/api/chat", {
+      const resp = await fetch(`${process.env.REACT_APP_API_URL}`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ prompt: text, history: messages })
